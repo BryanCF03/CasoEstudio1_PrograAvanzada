@@ -1,0 +1,83 @@
+﻿@model Reservaciones.Abstracciones.ModelosParaUI.ReservacionDto
+
+@{
+    ViewBag.Title = "Detalles de la Reservación";
+}
+
+<h2>Detalles de la Reservación #@Model.Id</h2>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Datos de la persona</h3>
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Nombre</dt>
+            <dd>@Model.NombreDeLaPersona</dd>
+
+            <dt>Identificación</dt>
+            <dd>@Model.Identificacion</dd>
+
+            <dt>Teléfono</dt>
+            <dd>@Model.Telefono</dd>
+
+            <dt>Correo</dt>
+            <dd>@Model.Correo</dd>
+
+            <dt>Fecha de nacimiento</dt>
+            <dd>@Model.FechaNacimiento.ToString("dd/MM/yyyy")</dd>
+
+            <dt>Dirección</dt>
+            <dd>@Model.Direccion</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Datos de la habitación</h3>
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Código</dt>
+            <dd>@Model.CodigoDeHabitacion</dd>
+
+            <dt>Nombre</dt>
+            <dd>@Model.NombreDeHabitacion</dd>
+
+            <dt>Tipo</dt>
+            <dd>@Model.TipoDeHabitacionEnProsa</dd>
+
+            <dt>Cantidad de personas</dt>
+            <dd>@Model.CantidadDeHuespedesPermitidos</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">Datos de la reservación</h3>
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Monto total</dt>
+            <dd>@Model.MontoTotal.ToString("N2")</dd>
+
+            <dt>Fecha de inicio</dt>
+            <dd>@Model.FechaInicioReserva.ToString("dd/MM/yyyy")</dd>
+
+            <dt>Fecha de fin</dt>
+            <dd>@Model.FechaFinReserva.ToString("dd/MM/yyyy")</dd>
+
+            <dt>Fecha de reservación</dt>
+            <dd>@Model.FechaDeRegistro.ToString("dd/MM/yyyy HH:mm")</dd>
+        </dl>
+    </div>
+</div>
+
+<br />
+
+@Html.ActionLink("Buscar otra reservación", "BuscarReserva", "Reservaciones",
+    null, new { @class = "btn btn-info" })
+@Html.ActionLink("Volver a habitaciones", "ListarHabitacionesDisponibles", "Reservaciones",
+    null, new { @class = "btn btn-secondary" })

@@ -1,0 +1,143 @@
+# ============================================================
+# GITIGNORE - Caso Práctico Hotel Los Patitos
+# ============================================================
+
+# ------------------------------------------------------------
+# Visual Studio / VS Code / Rider
+# ------------------------------------------------------------
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.rsuser
+
+# ------------------------------------------------------------
+# Build results (bin / obj)
+# ------------------------------------------------------------
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Oo]ut/
+
+# ------------------------------------------------------------
+# NuGet
+# ------------------------------------------------------------
+packages/
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ------------------------------------------------------------
+# Entity Framework
+# ------------------------------------------------------------
+*.edmx.diagram
+*.diagram
+
+# ------------------------------------------------------------
+# Archivos de compilación del proyecto web
+# ------------------------------------------------------------
+*.dll
+*.pdb
+*.exe
+*.cache
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# ------------------------------------------------------------
+# Publicación / Deploy
+# ------------------------------------------------------------
+publish/
+*.publishproj
+*.pubxml
+*.publishsettings
+PublishScripts/
+
+# ------------------------------------------------------------
+# Web.config transforms (no subir los generados)
+# ------------------------------------------------------------
+# NOTA: web.config SÍ se sube. Solo ignoramos transforms temporales
+# Web.Debug.config
+# Web.Release.config
+
+# ------------------------------------------------------------
+# ReSharper / DotCover / NDepend
+# ------------------------------------------------------------
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+*.dotCover
+*.ncrunch*
+*crunch*.local.xml
+*.ndproj
+
+# ------------------------------------------------------------
+# Archivos del sistema operativo
+# ------------------------------------------------------------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ------------------------------------------------------------
+# Bases de datos locales / backups
+# ------------------------------------------------------------
+*.mdf
+*.ldf
+*.ndf
+*.bak
+*.sql.bak
+
+# ------------------------------------------------------------
+# Archivos temporales de scripts
+# ------------------------------------------------------------
+*.log
+*.swp
+*.swo
+*~
+
+# ------------------------------------------------------------
+# Node (por si acaso)
+# ------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

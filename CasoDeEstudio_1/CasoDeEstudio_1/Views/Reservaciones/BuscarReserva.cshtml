@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Buscar Reservación";
+}
+
+<h2>Buscar Reservación</h2>
+
+<p>Ingrese el número de reservación para consultar los detalles.</p>
+
+@using (Html.BeginForm("BuscarReserva", "Reservaciones", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Número de reservación:</label>
+        <input type="number"
+               name="idReservacion"
+               class="form-control"
+               min="1"
+               required />
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">Buscar</button>
+    @Html.ActionLink("Volver", "ListarHabitacionesDisponibles", "Reservaciones",
+        null, new { @class = "btn btn-secondary" })
+}

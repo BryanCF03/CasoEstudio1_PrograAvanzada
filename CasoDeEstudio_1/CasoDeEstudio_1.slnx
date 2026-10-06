@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="abitaciones.Abstracciones/Habitaciones.Abstracciones.csproj" Id="b167ca55-d45f-479a-b1ab-631b135ada39" />
+  <Project Path="CasoDeEstudio_1/CasoDeEstudio_1.csproj" Id="87ebbb20-341e-49c9-a2b9-019c4b0a8c82" />
+  <Project Path="Habitaciones.AccesoADatos/Habitaciones.AccesoADatos.csproj" Id="7c85297e-548f-49d9-a7e1-210de83fb13f" />
+  <Project Path="Habitaciones.LogicaDeNegocio/Habitaciones.LogicaDeNegocio.csproj" Id="1233496d-efa3-45b9-8212-6d809bc4a717" />
+  <Project Path="Reservaciones.Abstracciones/Reservaciones.Abstracciones.csproj" Id="0fcfec75-6d6c-4709-9e86-4266f2770ba0" />
+  <Project Path="Reservaciones.AccesoADatos/Reservaciones.AccesoADatos.csproj" Id="11c1e85b-e5c9-4116-8920-927780c4ce16" />
+  <Project Path="Reservaciones.LogicaDeNegocio/Reservaciones.LogicaDeNegocio.csproj" Id="26f5ed76-7e2f-498e-bd19-be85e13b2e0f" />
+</Solution>
