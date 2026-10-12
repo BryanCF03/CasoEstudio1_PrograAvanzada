@@ -56,6 +56,10 @@
     <Compile Include="Reservaciones\ReservacionesLN.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Habitaciones.AccesoADatos\Habitaciones.AccesoADatos.csproj">
+      <Project>{7c85297e-548f-49d9-a7e1-210de83fb13f}</Project>
+      <Name>Habitaciones.AccesoADatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Reservaciones.Abstracciones\Reservaciones.Abstracciones.csproj">
       <Project>{0fcfec75-6d6c-4709-9e86-4266f2770ba0}</Project>
       <Name>Reservaciones.Abstracciones</Name>
