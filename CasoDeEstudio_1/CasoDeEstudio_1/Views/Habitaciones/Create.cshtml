@@ -1,0 +1,179 @@
+﻿
+@model Habitaciones.LogicaDeNegocio.DTO.HabitacionDTO
+
+@{
+    ViewBag.Title = "Registrar habitación";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+
+            <h2>Registrar habitación</h2>
+            <p>Complete los datos para registrar una nueva habitación.</p>
+            <hr />
+
+            @using (Html.BeginForm("Create", "Habitaciones", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.CodigoDeHabitacion, "Código de habitación")
+                            @Html.TextBoxFor(m => m.CodigoDeHabitacion, new
+                            {
+                                @class = "form-control",
+                                placeholder = "Ej. HAB-001",
+                                maxlength = "7"
+                            })
+                            @Html.ValidationMessageFor(m => m.CodigoDeHabitacion, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.NombreDeHabitacion, "Nombre de habitación")
+                            @Html.TextBoxFor(m => m.NombreDeHabitacion, new
+                            {
+                                @class = "form-control",
+                                placeholder = "Ej. Habitación familiar",
+                                maxlength = "30"
+                            })
+                            @Html.ValidationMessageFor(m => m.NombreDeHabitacion, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.CantidadDeHuespedesPermitidos, "Cantidad de huéspedes")
+                            @Html.TextBoxFor(m => m.CantidadDeHuespedesPermitidos, new
+                            {
+                                @class = "form-control",
+                                type = "number",
+                                min = "1"
+                            })
+                            @Html.ValidationMessageFor(m => m.CantidadDeHuespedesPermitidos, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.CantidadDeCamas, "Cantidad de camas")
+                            @Html.TextBoxFor(m => m.CantidadDeCamas, new
+                            {
+                                @class = "form-control",
+                                type = "number",
+                                min = "1"
+                            })
+                            @Html.ValidationMessageFor(m => m.CantidadDeCamas, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.CantidadDeBanos, "Cantidad de baños")
+                            @Html.TextBoxFor(m => m.CantidadDeBanos, new
+                            {
+                                @class = "form-control",
+                                type = "number",
+                                min = "0"
+                            })
+                            @Html.ValidationMessageFor(m => m.CantidadDeBanos, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Ubicacion, "Ubicación")
+                            @Html.TextBoxFor(m => m.Ubicacion, new
+                            {
+                                @class = "form-control",
+                                placeholder = "Ej. Piso 2",
+                                maxlength = "10"
+                            })
+                            @Html.ValidationMessageFor(m => m.Ubicacion, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.EncargadoDeLimpieza, "Encargado de limpieza")
+                            @Html.TextBoxFor(m => m.EncargadoDeLimpieza, new
+                            {
+                                @class = "form-control",
+                                placeholder = "Nombre del encargado",
+                                maxlength = "100"
+                            })
+                            @Html.ValidationMessageFor(m => m.EncargadoDeLimpieza, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.TipoDeHabitacion, "Tipo de habitación")
+                            @Html.DropDownListFor(
+                                m => m.TipoDeHabitacion,
+                                new List<SelectListItem>
+                                {
+                                    new SelectListItem { Text = "Seleccione un tipo", Value = "0" },
+                                    new SelectListItem { Text = "Junior", Value = "1" },
+                                    new SelectListItem { Text = "Superior", Value = "2" },
+                                    new SelectListItem { Text = "Suite", Value = "3" }
+                                },
+                                new { @class = "form-control" }
+                            )
+                            @Html.ValidationMessageFor(m => m.TipoDeHabitacion, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.CostoDeLimpieza, "Costo de limpieza (colones)")
+                            @Html.TextBoxFor(m => m.CostoDeLimpieza, new
+                            {
+                                @class = "form-control",
+                                type = "number",
+                                min = "0.01",
+                                step = "0.01"
+                            })
+                            @Html.ValidationMessageFor(m => m.CostoDeLimpieza, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.CostoDeReserva, "Costo de reserva (colones)")
+                            @Html.TextBoxFor(m => m.CostoDeReserva, new
+                            {
+                                @class = "form-control",
+                                type = "number",
+                                min = "0.01",
+                                step = "0.01"
+                            })
+                            @Html.ValidationMessageFor(m => m.CostoDeReserva, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Estado inicial</label>
+                            <input type="text"
+                                   class="form-control"
+                                   value="Activa"
+                                   readonly />
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        Registrar habitación
+                    </button>
+
+                    @Html.ActionLink(
+                        "Volver al listado",
+                        "Index",
+                        "Habitaciones",
+                        null,
+                        new { @class = "btn btn-default" }
+                    )
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
