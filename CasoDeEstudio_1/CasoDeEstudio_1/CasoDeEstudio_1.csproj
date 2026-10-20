@@ -193,6 +193,7 @@
     <Content Include="Views\Habitaciones\Create.cshtml" />
     <Content Include="Views\Reservaciones\ListarHabitacionesDisponibles.cshtml" />
     <Content Include="Views\Reservaciones\Reservar.cshtml" />
+    <Content Include="Views\Reservaciones\ListarReservas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

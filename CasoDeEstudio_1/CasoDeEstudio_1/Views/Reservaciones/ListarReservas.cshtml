@@ -1,0 +1,94 @@
+﻿@model List<Reservaciones.Abstracciones.ModelosParaUI.ReservacionDto>
+
+@{
+    ViewBag.Title = "Ver reservas";
+}
+
+<h2>Ver reservas</h2>
+
+<p>
+    Consulte el historial de reservas o filtre por el ID de una habitación.
+</p>
+
+@using (Html.BeginForm("ListarReservas", "Reservaciones", FormMethod.Get))
+{
+<div class="row mb-3">
+    <div class="col-md-4">
+        <label for="idHabitacion" class="form-label">
+            ID de habitación
+        </label>
+
+        <input type="number"
+               id="idHabitacion"
+               name="idHabitacion"
+               value="@ViewBag.FiltroHabitacion"
+               min="1"
+               class="form-control"
+               placeholder="Ingrese el ID de habitación" />
+    </div>
+
+    <div class="col-md-8 d-flex align-items-end gap-2">
+        <button type="submit" class="btn btn-primary">
+            Filtrar
+        </button>
+
+        @Html.ActionLink(
+            "Ver todas",
+            "ListarReservas",
+            "Reservaciones",
+            null,
+            new { @class = "btn btn-secondary" }
+        )
+    </div>
+</div>
+}
+
+@if (ViewBag.FiltroHabitacion != null)
+{
+<p>
+    Reservas de la habitación con ID:
+    <strong>@ViewBag.FiltroHabitacion</strong>
+</p>
+}
+
+@if (Model.Count == 0)
+{
+<div class="alert alert-info">
+    No se encontraron reservas para esta consulta.
+</div>
+}
+else
+{
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre de la persona</th>
+                <th>Teléfono</th>
+                <th>Correo</th>
+                <th>Identificación</th>
+                <th>Monto total</th>
+                <th>Fecha de nacimiento</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de fin</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var reserva in Model)
+                {
+            <tr>
+                <td>@reserva.NombreDeLaPersona</td>
+                <td>@reserva.Telefono</td>
+                <td>@reserva.Correo</td>
+                <td>@reserva.Identificacion</td>
+                <td>@reserva.MontoTotal.ToString("N2")</td>
+                <td>@reserva.FechaNacimiento.ToString("dd/MM/yyyy")</td>
+                <td>@reserva.FechaInicioReserva.ToString("dd/MM/yyyy")</td>
+                <td>@reserva.FechaFinReserva.ToString("dd/MM/yyyy")</td>
+            </tr>
+                }
+        </tbody>
+    </table>
+</div>
+}
